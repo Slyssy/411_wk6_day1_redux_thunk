@@ -1,4 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
+
+import ActionMenu from './ActionMenu';
 
 import {
   Container,
@@ -10,10 +13,16 @@ import {
   TableRow,
 } from '@mui/material';
 
-import DeleteIcon from '@mui/icons-material/Delete';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Import = (props) => {
   // fill out this component
+  const [showActionMenu, setShowActionMenu] = useState(false);
+
+  const handleClick = (event) => {
+    setShowActionMenu((current) => !current);
+  };
+
   return (
     <Container maxWidth='md'>
       <Button onClick={props.fetchMakes} variant='contained'>
@@ -33,11 +42,7 @@ const Import = (props) => {
               <TableCell>{car.MakeId}</TableCell>
               <TableCell>{car.MakeName}</TableCell>
               <TableCell>
-                <DeleteIcon
-                  // add onClick method here
-                  onClick={() => props.removeCar(idx)}
-                  className='icon text-red'
-                />
+                <ActionMenu />
               </TableCell>
             </TableRow>
           ))}
