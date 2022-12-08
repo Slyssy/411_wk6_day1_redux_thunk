@@ -12,12 +12,11 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
-import { deleteMake } from '../redux/actions';
 
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Import = (props) => {
-  console.log(props);
+  // console.log(props);
 
   return (
     <Container maxWidth='lg' className='car-container'>

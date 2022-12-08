@@ -8,7 +8,7 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export default function MenuPopupState(props) {
-  console.log(props);
+  // console.log(props);
   const handleClick = () => {
     props.deleteMake(props.index);
   };
