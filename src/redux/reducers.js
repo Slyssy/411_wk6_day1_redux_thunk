@@ -23,7 +23,7 @@ const makes = (state = [], action) => {
     case 'DELETE_MAKE':
       const makes = [...state];
       makes.splice(action.value, 1);
-      console.log(makes);
+      // console.log(makes);
       return makes;
     default:
       return state;
