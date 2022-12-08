@@ -7,7 +7,11 @@ import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-export default function MenuPopupState() {
+export default function MenuPopupState(props) {
+  console.log(props);
+  const handleClick = () => {
+    props.deleteMake(props.index);
+  };
   return (
     <PopupState variant='popover' popupId='demo-popup-menu'>
       {(popupState) => (
@@ -20,7 +24,7 @@ export default function MenuPopupState() {
             Dashboard
           </Button> */}
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={popupState.close}>
+            <MenuItem onClick={handleClick}>
               <ListItemIcon>
                 <DeleteIcon />
               </ListItemIcon>

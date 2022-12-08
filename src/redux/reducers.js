@@ -20,6 +20,11 @@ const makes = (state = [], action) => {
     //? Step 2 from the README
     case 'FETCH_MAKES':
       return action.value;
+    case 'DELETE_MAKE':
+      const makes = [...state];
+      makes.splice(action.value, 1);
+      console.log(makes);
+      return makes;
     default:
       return state;
   }

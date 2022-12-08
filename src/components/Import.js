@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import ActionMenu from './ActionMenu';
 
@@ -12,22 +12,19 @@ import {
   TableHead,
   TableRow,
 } from '@mui/material';
+import { deleteMake } from '../redux/actions';
 
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Import = (props) => {
-  // fill out this component
-  const [showActionMenu, setShowActionMenu] = useState(false);
-
-  const handleClick = (event) => {
-    setShowActionMenu((current) => !current);
-  };
+  console.log(props);
 
   return (
-    <Container maxWidth='md'>
+    <Container maxWidth='lg' className='car-container'>
       <Button onClick={props.fetchMakes} variant='contained'>
         Import
       </Button>
+      <h2>COUNT: {props.makes.length}</h2>
       <Table>
         <TableHead>
           <TableRow>
@@ -42,7 +39,7 @@ const Import = (props) => {
               <TableCell>{car.MakeId}</TableCell>
               <TableCell>{car.MakeName}</TableCell>
               <TableCell>
-                <ActionMenu />
+                <ActionMenu deleteMake={props.deleteMake} index={idx} />
               </TableCell>
             </TableRow>
           ))}

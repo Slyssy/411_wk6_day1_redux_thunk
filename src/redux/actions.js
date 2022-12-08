@@ -29,3 +29,11 @@ export const fetchMakes = () => {
       });
   };
 };
+
+//? Delete Make Action Deletes a row in Import Component
+export const deleteMake = (index) => {
+  return {
+    type: 'DELETE_MAKE',
+    value: index,
+  };
+};
